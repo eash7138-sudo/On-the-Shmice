@@ -1,0 +1,355 @@
+/* gen stuff */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+  background-color: #181818;
+}
+
+/* text stuff */
+
+p {
+  color: rgb(241, 233, 233);
+  margin-left: 40px; 
+  margin-right: auto; 
+  text-align: center;
+  font-family: 'Fredoka', sans-serif;
+}
+
+h1 {
+  color: orange;
+  text-align: center;
+}
+
+h2 {
+  color: black;
+  text-align: center;
+}
+
+h1, h2, h3, .bubbly-text {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600; 
+    letter-spacing: 0.5px;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;            
+  padding: 20px 10%;
+  background-color: #333;
+  color: black;
+}
+
+.hero-text {
+    position: absolute;
+    z-index: 2; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #ffffff;
+}
+
+/* nav bar */
+
+nav a {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 500;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+nav {
+  width: 100%; 
+  background-color: #181818; 
+  position: relative;
+  z-index: 10; 
+}
+
+nav ul {
+  list-style: none;               
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;          
+  color: white;
+}
+
+nav a img, 
+nav img {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none;
+}
+
+
+.nav-links {
+    display: flex;
+    gap: 25px; 
+}
+
+
+nav a img {
+    max-height: 50px; 
+    width: auto;
+}
+
+/* content sorting */ 
+
+img {
+    display: block;
+    align-items: center;
+    width: auto;
+    max-height: 100px
+}
+
+.center-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 350px;
+  height: auto; 
+  max-height: 350px;
+}
+
+
+.container {
+  max-width: 1200 px; 
+  width: 100%; 
+  margin: 0 auto; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  padding: 15px 20px; 
+}
+
+.center-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    background-color: #FFFDF9;
+    
+}
+
+#bg-video {
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; 
+  object-fit: cover;
+
+}
+
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.55); /* Change 0.55 to higher (like 0.7) for darker, lower for lighter */
+    z-index: 1; /* Sits right on top of the video */
+}
+
+
+.hero-container {
+  position: relative;
+  width: 100%;
+  height: 100vh; 
+  overflow: hidden;
+}
+
+
+.white-section {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 1000px; 
+  background-color: #FFFDF9;
+  padding: 40px; 
+}
+
+.view-menu-button {
+    display: block;
+    margin: 20px auto; 
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+ul::view-menu-button(*):hover,
+ul::view-menu-button(*):focus {
+  opacity: 1;
+}
+
+/* image carousel */
+
+ul {
+  width: 100%;
+  height: 600px;
+  padding: 20px;
+  display: flex;
+  gap: 4vw;
+}
+
+li {
+  list-style-type: none;
+  background-color: #eeeeee;
+  border: 1px solid #dddddd;
+  padding: 20px;
+
+  flex: 0 0 100%;
+}
+
+li:nth-child(even) {
+  background-color: orange;
+}
+
+ul {
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+}
+
+li {
+  scroll-snap-align: center;
+}
+
+.carousel-container {
+    width: 100%; /* or whatever width you choose */
+    overflow: hidden; /* This chops off the extra hanging space */
+}
+
+/* carousel button */
+
+ul::scroll-button(*) {
+  border: 0;
+  font-size: 2rem;
+  background: none;
+  color: black;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+ul::scroll-button(*):hover,
+ul::scroll-button(*):focus {
+  opacity: 1;
+}
+
+ul::scroll-button(*):active {
+  translate: 1px 1px;
+}
+
+ul::scroll-button(*):disabled {
+  opacity: 0.2;
+  cursor: unset;
+}
+
+ul::scroll-button(left) {
+  content: "◄" / "Previous";
+}
+
+ul::scroll-button(right) {
+  content: "►" / "Next";
+}
+
+ul {
+  anchor-name: --my-carousel;
+}
+
+ul::scroll-button(*) {
+  position: absolute;
+  position-anchor: --my-carousel;
+}
+
+ul::scroll-button(left) {
+  right: calc(anchor(left) - 400px);
+  bottom: calc(anchor(top) - 300px);
+}
+
+ul::scroll-button(right) {
+  left: calc(anchor(right) - 400px);
+  bottom: calc(anchor(top) - 300px);
+}
+
+/* scroll marker */
+
+ul {
+  scroll-marker-group: after;
+}
+
+ul::scroll-marker-group {
+  position: absolute;
+  position-anchor: --my-carousel;
+  top: calc(anchor(bottom) - 70px);
+  justify-self: anchor-center;
+
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+li::scroll-marker {
+  content: attr(data-accName);
+  width: 16px;
+  height: 16px;
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 50%;
+  overflow: hidden;
+  text-indent: 16px;
+}
+
+li::scroll-marker:target-current {
+  background-color: black;
+}
+
+
+
+/* about me specific */
+
+.black-section {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 1000px; 
+  background-color: #242423;
+  padding: 40px; 
+}
+
+.seoul-container {
+  position: relative;
+  width:100%;
+  height: 450px; 
+  overflow: hidden;
+}
+
+.seoul-container img {
+  width: 100%;
+  height: 100% !important;
+  object-fit: cover;
+  object-position: center;
+}
