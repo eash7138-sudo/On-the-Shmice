@@ -5,7 +5,9 @@
 }
 
 html {
-  background-color: #181818;
+  background-color: #1a1919;
+  scroll-behavior: smooth;
+
 }
 
 /* text stuff */
@@ -15,6 +17,15 @@ p {
   margin-left: 40px; 
   margin-right: auto; 
   text-align: center;
+  font-family: 'Fredoka', sans-serif;
+  line-height: 1.6
+}
+
+.p-left {
+  color: rgb(241, 233, 233);
+  margin-left: 40px; 
+  margin-right: auto; 
+  text-align: left;
   font-family: 'Fredoka', sans-serif;
 }
 
@@ -26,12 +37,46 @@ h1 {
 h2 {
   color: black;
   text-align: center;
+
+}
+
+
+
+h3 {
+  color: #ffffff;
+  text-align: center;
+}
+
+.left-h2 {
+  color: black;
+  margin-left: 40px;
+  margin-right: auto;
+  margin-top: 40px;
 }
 
 h1, h2, h3, .bubbly-text {
     font-family: 'Fredoka', sans-serif;
     font-weight: 600; 
     letter-spacing: 0.5px;
+}
+
+.p2 {
+  color: rgb(15, 15, 15);
+  font-family: 'Fredoka', sans-serif;
+  font-size: 28px;
+  line-height: 1.4;
+  
+}
+
+.h4 {
+  color: rgb(15, 15, 15);
+  font-family: 'Fredoka', sans-serif;
+  font-size: 50px;
+  line-height: 1.2;
+  max-width: 600px;
+  margin-left: 40px;
+  margin-top: 20px;
+
 }
 
 .content {
@@ -60,6 +105,19 @@ header {
     color: #ffffff;
 }
 
+.orange-accent {
+  color: #f08914; /* Your brand orange */
+}
+
+.bold-heading {
+  font-size: 3.5rem;       /* Bumps up the size significantly (approx 56px) */
+  line-height: 1.2;        /* Keeps the stacked lines tight and clean so they don't drift apart */
+  color: #1a1919;          /* Keeps it deep dark charcoal/black */
+  margin-bottom: 20px;     /* Adds a nice gap between this header and the paragraph text */
+  text-align: left;
+  margin-left: 40px;
+}
+
 /* nav bar */
 
 nav a {
@@ -72,8 +130,9 @@ nav a {
 nav {
   width: 100%; 
   background-color: #181818; 
-  position: relative;
-  z-index: 10; 
+  position: fixed;
+  z-index: 1000; 
+  top: 0;
 }
 
 nav ul {
@@ -115,7 +174,7 @@ img {
     display: block;
     align-items: center;
     width: auto;
-    max-height: 100px
+    max-height: 100px;
 }
 
 .center-image {
@@ -126,8 +185,44 @@ img {
   max-width: 350px;
   height: auto; 
   max-height: 350px;
+  margin-top: 100px;
+  margin-bottom: 40px;
+  align-items: center;
 }
 
+.diff-center-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 350px;
+  height: auto; 
+  max-height: 350px;
+  margin-top: 40px;
+  margin-bottom: 100px;
+}
+
+.right-image {
+  display: block;
+  margin-left: auto;
+  margin-right: 30px;
+  width: 100%;
+  max-width: 400px;
+  height: 437px; 
+  max-height: 500px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.lil-left-image {
+  display: block;
+  margin-top: 50px;
+  margin-bottom: 50px; 
+  width: 100%;
+  max-width: 400px;
+  height: auto; 
+  max-height: 450px;
+}
 
 .container {
   max-width: 1200 px; 
@@ -143,7 +238,7 @@ img {
     display: flex;
     justify-content: center; 
     align-items: center;     
-    background-color: #FFFDF9;
+    background-color: #f08914;
     
 }
 
@@ -155,7 +250,7 @@ img {
   height: 100%;
   z-index: -1; 
   object-fit: cover;
-
+  
 }
 
 
@@ -183,7 +278,7 @@ img {
   z-index: 2;
   width: 100%;
   height: 1000px; 
-  background-color: #FFFDF9;
+  background-color: #FDFBF7;
   padding: 40px; 
 }
 
@@ -206,6 +301,147 @@ ul::view-menu-button(*):focus {
   opacity: 1;
 }
 
+/* moving header */
+
+.scroll-container {
+  display: flex;
+  align-items: center;
+  height: auto;
+  width: 100%;
+  padding: 20px 0;
+  overflow: hidden;
+
+}
+
+.scroll {
+  white-space: nowrap;
+  margin: 0 2em;
+}
+
+.scroll div{
+  display: flex;
+  gap: 2em
+}
+
+.scroll img {
+  margin-bottom: 0
+}
+
+.RightToLeft {
+  animation: RightToLeft 25s infinite linear;
+}
+
+@keyframes RightToLeft {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* welcome message */
+  
+  /* The main wrapper for the whole block */
+
+  .welcome-message {
+    
+    background-color: #FDFBF7;
+    width: 1800px;
+    height: auto;
+    display: flex;
+    gap: 30px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    border: 5px solid rgb(0, 0, 0);
+    border-radius:50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 60px 40px;
+    max-height: 800px;
+    line-height: 1.6;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 
+              0 5px 15px rgba(0, 0, 0, 0.2);
+    
+  }
+
+  /* Target the middle paragraph specifically */
+.welcome-message p {
+  text-align: left;       /* Changes it from center to left alignment */
+  margin-left: 0;         /* Removes any inherited center offsets */
+  margin-right: 0;
+  font-size: 2.2rem;      /* Slightly bumps up size if needed for readability */
+  color: #383333;         /* A soft dark gray looks cleaner than harsh pure black on white */
+}
+
+.text-group {
+  display: flex;
+  flex-direction: column; /* Stacks header on top of paragraph */
+  justify-content: center;/* Vertically centers them relative to the food photos */
+  gap: 15px;              /* Adds a perfect uniform space between heading and paragraph */
+  max-width: 45%;         /* Keeps the text from spilling over into the images */
+}
+
+.welcome-message img {
+  border-radius: 16px; /* Smooth rounded edges */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+  .welcome-message img:hover {
+  transform: scale(1.03);
+}
+
+  .welcome-message::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: 120px;
+  height: 120px;
+  background-image: radial-gradient(#f08914 20%, transparent 20%);
+  background-size: 15px 15px;
+  z-index: 1; /* Sits cleanly behind the white card */
+  opacity: 0.5;
+
+  
+}
+
+/* Replace the .welcome-message::before or add to a new class */
+.welcome-message::after {
+  content: '';
+  position: absolute;
+  top: -25px;
+  left: -25px;
+  width: 140px;
+  height: 140px;
+  background-color: #f08914; /* Brand orange */
+  opacity: 0.25;             /* Kept soft so it doesn't distract */
+  z-index: -1;
+  
+  /* The secret sauce: This creates an irregular, fluid blob shape */
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  
+  /* Gives it a playful float animation */
+  animation: blobFloat 6s ease-in-out infinite alternate;
+}
+
+/* Subtle floating animation to make the site feel premium */
+@keyframes blobFloat {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+  100% {
+    transform: translate(10px, 10px) rotate(15deg);
+    border-radius: 50% 50% 30% 70% / 50% 60% 40% 60%;
+  }
+}
+  
+
 /* image carousel */
 
 ul {
@@ -214,23 +450,27 @@ ul {
   padding: 20px;
   display: flex;
   gap: 4vw;
+  
 }
 
 li {
   list-style-type: none;
-  background-color: #eeeeee;
+  background-color: #242322;
   border: 1px solid #dddddd;
   padding: 20px;
-
   flex: 0 0 100%;
+  
 }
 
+
+
 li:nth-child(even) {
-  background-color: orange;
+  background-color: #242322;
 }
 
 ul {
-  overflow-x: scroll;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
 }
 
@@ -243,13 +483,33 @@ li {
     overflow: hidden; /* This chops off the extra hanging space */
 }
 
+@keyframes smoothReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px) scale(0.98);
+  }
+  70% {
+    transform: translateY(2px) scale(1.01); /* Subtle bounce */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.menu-panel.is-active {
+  display: block;
+  animation: smoothReveal 0.4s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+
 /* carousel button */
 
 ul::scroll-button(*) {
   border: 0;
   font-size: 2rem;
   background: none;
-  color: black;
+  color: #ffffff;
   opacity: 0.7;
   cursor: pointer;
 }
@@ -288,11 +548,15 @@ ul::scroll-button(*) {
 ul::scroll-button(left) {
   right: calc(anchor(left) - 400px);
   bottom: calc(anchor(top) - 300px);
+  transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), 
+              opacity 0.2s ease;
 }
 
 ul::scroll-button(right) {
   left: calc(anchor(right) - 400px);
   bottom: calc(anchor(top) - 300px);
+  transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), 
+              opacity 0.2s ease;
 }
 
 /* scroll marker */
@@ -317,39 +581,192 @@ li::scroll-marker {
   width: 16px;
   height: 16px;
   background-color: transparent;
-  border: 2px solid black;
+  border: 2px solid #ffffff;
   border-radius: 50%;
   overflow: hidden;
   text-indent: 16px;
+  margin-bottom: 40px;
 }
 
 li::scroll-marker:target-current {
-  background-color: black;
+  background-color: #ffffff;
 }
 
-
+/* footer */
+footer {
+  position: relative !important;
+  display: block !important;
+  clear: both !important;
+  background-color: #242322 !important;
+  width: 100% !important;
+  padding: 40px 0;
+  text-align: center;
+  color: #ffffff;
+  margin-top: 80px !important;
+}
 
 /* about me specific */
 
 .black-section {
-  position: relative;
-  z-index: 2;
+  background-color: #1a1919;
   width: 100%;
-  height: 1000px; 
-  background-color: #242423;
-  padding: 40px; 
+  padding: 60px 20px;
 }
 
 .seoul-container {
   position: relative;
-  width:100%;
-  height: 450px; 
+  width: 100%;
+  height: 300px;           /* Sets the exact ideal height you want */
   overflow: hidden;
+  margin-top: 60px;       
+  background-color: #1a1919;
+}
+
+.seoul-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;            /* Stretches the gradient to match the full 300px height */
+  background: linear-gradient(to bottom, transparent, #1a1919);
+  z-index: 2;              /* Forces the gradient to sit nicely on top of the image */
+  pointer-events: none;
 }
 
 .seoul-container img {
+  position: absolute;      /* Added absolute positioning to force the image to anchor to the container */
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 100% !important;
-  object-fit: cover;
-  object-position: center;
+  height: 100% !important; /* Overrides any rogue 100px limitations */
+  max-height: none !important;
+  object-fit: cover;       /* Forces the image to stretch out landscape-style to cover the area */
+  object-position: center; 
+  z-index: 1;              /* Sits right below the gradient layer */
+}
+
+/* Container holding map and image side-by-side */
+.location-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;             /* Adds a balanced gap between the map and image */
+  width: 100%;
+  max-width: 1200px;     /* Keeps it aligned with your site's content grid */
+  margin: 50px auto;     /* Centers the entire block on the page */
+  padding: 0 20px;
+}
+
+/* Give the map box and the image box equal fluid width splits */
+.location-map-box,
+.location-image-box {
+  flex: 1;               /* Forces both columns to stay exactly proportional */
+  width: 100%;
+  max-width: 550px;
+}
+
+/* Force the image to elegantly match the aspect ratio of the map element */
+img.location-photo {
+  width: 100%;
+  height: 450px;         /* Match the exact pixel height setting of your map iframe */
+  max-height: none;
+  object-fit: cover;     /* Prevents distortion or squishing */
+  border-radius: 20px;   /* Clean rounded borders to match your bubbly vibe */
+}
+
+/* Optional: Smooth out the map corners to match the image rounding */
+.location-map-box iframe {
+  border-radius: 20px;
+}
+
+.owners-section-row {
+  display: flex;
+  flex-direction: row;      /* Forces side-by-side layout */
+  align-items: center;      /* Vertically aligns text and image in the middle */
+  justify-content: space-between; /* Pushes text to left, image to right */
+  gap: 40px;                /* Adds a clean space between text and image */
+  width: 100%;
+  max-width: 1200px;        /* Limits layout expansion on massive screens */
+  margin: 40px auto;        /* Centers the entire block on the page */
+  padding-bottom: 100px;
+}
+
+div.owners-container {
+  display: flex;
+  justify-content: right;
+  align-items: right;
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;  
+  padding-bottom: 80px;     
+}
+
+.owners-text-group {
+  flex: 1;                  /* Allows text to dynamically take up remaining space */
+  text-align: left;
+}
+
+.owners-text-group p {
+  text-align: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.owners-image-container {
+  flex: 0 0 45%;            /* Image wrapper takes up exactly 45% of the row width */
+  max-width: 500px;
+  position: relative;
+}
+
+.owners-image-container::before {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  width: 100px;
+  height: 100px;
+  /* Use a high z-index to place it underneath or above depending on taste */
+  z-index: -1; 
+  background-image: radial-gradient(orange 20%, transparent 20%);
+  background-size: 15px 15px;
+  opacity: 0.6;
+}
+
+img.owners-photo {
+  width: 100%;
+  height: auto;         
+  max-height: 450px;
+  object-fit: cover;       
+  border-radius: 20px;     
+}
+
+img.restaurant-photo {
+  width: 100%;
+  height: auto;         
+  max-height: 450px;
+  object-fit: cover;       
+  border-radius: 20px;  
+
+}
+
+.owners-text {
+  text-align: left;
+  color: white;
+  max-width: 900px;
+  margin-left: 30px auto;
+}
+
+.owners-text-group h1 {
+  display: inline-block;
+  background-color: #f08914; /* Warm orange */
+  color: #1a1919;            /* Dark text for contrast */
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.5rem;
+  padding: 6px 18px;
+  border-radius: 30px;       /* Cute, bubbly rounded pill shape */
+  margin-top: 25px;
+  margin-bottom: 10px;
+  text-align: left;          /* Overrides global center alignment */
 }
